@@ -1,0 +1,194 @@
+
+
+<!--範例 6 : 內嵌 Youtube 影片測試
+iframe 可以用來在網頁中嵌入 Youtube 影片, 先將網址 watch?v= 後面的影片 id 記下來, 例如下面這個 id=lM108D-og5o 的影片 :
+然後將影片 id 放到 iframe 的 src 屬性中, 網址格式如下 :
+
+https://www.youtube.com/embed/lM108D-og5o 
+
+注意, 不可以直接將影片網址 https://www.youtube.com/watch?v=lM108D-og5o 設為 src, 那樣會被 Youtube 拒絕顯示.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>內嵌頁框測試</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <figure>
+    <iframe src="https://www.youtube.com/embed/lM108D-og5o" width=400 height=300 frameborder="0" allowfullscreen>不支援 iframe</iframe>
+    <figcaption>nRF24L01 無線模組測試</figcaption>
+  </figure>
+</body>
+</html>
+
+<!--表格：
+    九. 表格 :
+
+HTML 的表格主要由 table (表格本身), tr (列), th (標題欄), td (內容欄), caption (表格標題) 等元素組成, 結構如下 :
+
+  <table>
+    <caption>表格標題</caption>
+    <tr>
+      <th>標頭欄</th>
+      <th>標頭欄</th>
+    </tr>
+    <tr>
+      <td>內容欄</td>
+      <td>內容欄</td>
+    </tr>
+    <tr>
+      <td colspan="2">表格尾</td>
+    </tr>
+  </table>
+
+另外也可以加上三個結構元素 thead (表格標頭), tbody (表格主體), 以及 tfoot (表格結尾), 但不是必要 :
+
+  <table>
+    <caption>表格標題</caption>
+    <thead>
+      <tr>
+        <th>標頭欄</th>
+        <th>標頭欄</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>內容欄</td>
+        <td>內容欄</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">表格尾</td>
+      </tr>
+    </tfoot>
+  </table>
+
+table 元素的屬性 :
+
+
+ table 屬性	 說明
+ border	 表格外框寬度 (px)
+ with	 表格寬度 (px 或 %)
+ cellpadding	 儲存格上下左右留白 (px)
+ cellspacing	 相鄰儲存格之間距 (px)
+ frame	 表格外框的顯示模式 
+ rules	 表格內框的顯示模式
+
+ table 的 frame 屬性	 說明
+ void	 不顯示外框
+ box	 只顯示四邊框線
+ above	 只顯示上框線
+ below	 只顯示下框線
+ hsides	 只顯示上下框線
+ lhs	 只顯示左框線
+ rhs	 只顯示右框線
+ vsides	 只顯示左右框線
+
+ table 的 rules 屬性	 說明
+ none	 不顯示內框線
+ all	 顯示全部內框線
+ rows	 只顯示各列之間的內框線
+ cols	 只顯示各欄之間的內框線
+ groups	 顯示 thead, tbody, tfoot 之間的內框線
+
+
+tr 元素的屬性 :
+
+
+ tr 屬性	 說明
+ align	 設定整列之水平對齊 (left/center/right/justify/char)
+ valign	 設定整列之垂直對齊 (top/middle/bottom/baseline)
+
+
+td 與 tr 的屬性 :
+
+
+ td 屬性	 說明
+ colspan	 合併儲存格的欄數
+ rowspan	 合併儲存格的欄數
+ align	 設定儲存格之水平對齊 (left/center/right/justify/char)
+ valign	 設定儲存格之垂直對齊 (top/middle/bottom/baseline)
+ width	 儲存格寬度 (px 或佔表格寬度 %)
+ height	 儲存格高度 (px 或佔表格高度 %)
+
+
+範例 14 : 原始表格測試
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表格</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <table border="1">
+    <caption>表格標題</caption>
+    <tr>
+      <th>第1欄</th>
+      <th>第2欄</th>
+      <th>第3欄</th>
+    </tr>
+    <tr>
+      <td>第1列第1欄</td>
+      <td>第1列第2欄</td>
+      <td>第1列第3欄</td>
+    </tr>
+    <tr>
+      <td>第2列第1欄</td>
+      <td>第2列第2欄</td>
+      <td>第2列第3欄</td>
+    </tr>
+    <tr>
+      <td colspan="3">合併儲存格</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+可見原始的表格外觀不是很好看, 可以將 border 設為 0, cellspacing 設為 1, 並將 table 與 th/td 的背景利用樣式表設為不同色套疊得到細邊框的表格, 例如 :
+
+
+範例 15 : 細邊框表格測試
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表格</title>
+  <meta charset="utf-8">
+  <style>
+  table {background-color:blue;} 
+  td, th {background-color:white;} 
+  </style>
+</head>
+<body>
+  <table border="0" cellspacing="1" cellpadding="5">
+    <caption>表格標題</caption>
+    <tr>
+      <th>第1欄</th>
+      <th>第2欄</th>
+      <th>第3欄</th>
+    </tr>
+    <tr>
+      <td>第1列第1欄</td>
+      <td>第1列第2欄</td>
+      <td>第1列第3欄</td>
+    </tr>
+    <tr>
+      <td>第2列第1欄</td>
+      <td>第2列第2欄</td>
+      <td>第2列第3欄</td>
+    </tr>
+    <tr>
+      <td colspan="3">合併儲存格</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+
+此例使用 style 樣式表元素將 table 元素之底色設為藍色, td 與 th 底色設為白色, 而 cellspacing 設為 1 (表示相鄰儲存格間隙寬度為 1px), 套疊結果就顯示邊框為 1px 的藍色細邊框.-->

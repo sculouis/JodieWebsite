@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>會員註冊</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  </link>
+
+</head>
+<br>
+<br>
+
+<body>
+<!--表單內容-->
+<br>
+<br>
+<div class="container">
+<h1>會員註冊</h1>
+<br>
+<br>
+  <form id="register_form" role="form" data-toggle="validator">
+    <!--form id要跟script$()內容一致-->
+    <div class="form-group">
+      <label for="">會員姓名</label>
+      <input id="inputName" name="Name" type="text" class="form-control" placeholder="請輸入姓名" required="required">
+      <div class="help-block with-errors"></div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">會員電話</label>
+      <input id="inputName" name="Name" type="text" class="form-control" placeholder="請輸入手機號碼" required="required">
+      <div class="help-block with-errors"></div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">會員生日</label>
+      <input id="datepicker" name="Name" type="text" class="form-control" placeholder="請輸入生日" required="required">
+      <div class="help-block with-errors"></div>
+      
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">會員e-mail</label>
+      <input id="inputEmail" name="Email" class="form-control" type="email" placeholder="電子郵件地址" data-error="郵件格式錯誤"
+        required="required">
+      <div class="help-block with-errors"></div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">會員密碼</label>
+      <input id="inputPassword" name="Password" class="form-control" type="password" placeholder="設定密碼"
+        pattern="^(?=.*\d)(?=.*[a-zA-Z]).{6,}$" data-error="請輸入含有英文字母及數字的密碼，至少六個字元。" required="required">
+      <div class="help-block with-errors"></div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">確認密碼</label>
+      <input id="inputConfirmPassword" name="ConfirmPassword" class="form-control" type="password" placeholder="確認密碼"
+        data-match="#inputPassword" data-error="密碼未吻合！" required="required">
+      <div class="help-block with-errors"></div>
+    </div>
+    <input type="submit" value="註冊" class="btn btn-danger btn-block" />
+  </form>
+  <br>
+     <a class="btn btn-secondary btn-lg btn-block" href="index.html" role="button">繼續購物</a>
+
+</div>
+
+  <br>
+  <br>
+  <script>
+    $(function() {
+      $( "#datepicker" ).datepicker();
+    });
+    </script>
+  
+  <!--執行 Validator-->
+  <script>
+    $('#register_form').validator().on('submit', function (e) {
+      if (e.isDefaultPrevented()) { // 未驗證通過 則不處理
+        return;
+      } else { // 通过后，送出表单
+        alert("提交表單");
+      }
+      e.preventDefault(); // 防止原始 form 提交表单
+    });
+  </script>
+
+  <!-- Optional JavaScript -->
+  <script src="./scriptsplugin/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="./scriptsplugin/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="./scriptsplugin/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="./scripts/form.js"></script>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+  <!--引用 Validator-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html><!--引入b4模板step1-->
+<html lang="en">
+  <head>
+    <title>會員基本資料</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body><!--step2 b4-grid-container做個箱子-->
+    <h1>會員基本資料</h1><!--h1做標題-->
+      <div class="container">
+        <form id="form" method="post" action=""></form>
+          <div class="row"><!--step3 b4-grid-row做一列-->            
+              <div class="col-sm"><!--b4-grid-col選sm尺寸-1-12先不用 step4-->
+                  <div class="form-group"><!--b4-form-group-text群組的表單step5-->
+                    <label for="">會員編號</label><!--給標籤名稱step6-->
+                    <input type="text" name="" id="memberid" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">請輸入會員編號</small>
+                  </div>
+              </div>
+          </div>          
+            <div class="col-sm"><!--複製step4-->
+                <div class="form-group">
+                  <label for="">會員姓名</label>
+                  <input type="text" name="membername" id="membername" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted">請輸入會員姓名</small>
+                </div>
+            </div>
+            性別<br>                
+            <input type="radio" name="gender" value="true" checked>男<br>
+            <input type="radio" name="gender" value="false">女<br>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+              <label for="">出生年月日</label>
+              <input type="date" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">              
+            </div>
+        </div>        
+          <!--建立多選項下拉選單 單選刪除multitep7-->          
+          <div class="col-sm"><!--b4-grid-col-->
+              <div class="form-group"><!--b4-form-multi-select-->
+                <label for="">學歷</label>
+                <select class="form-control" name="" id="">
+                  <option>大學以上</option><!--選項-->
+                  <option>高中以上</option>
+                  <option>無</option>
+                </select>
+              </div>
+          </div>
+        </div>
+        <!--把step7複製過來貼上step8-->          
+      </div>
+      <input type="submit" value="送出" />
+    </form>
+
+    </div>  
+    <button onclick="Register()">註冊</button>  
+    <br>
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./scripts/form.js"></script> -->
+    <script src="./scriptsplugin/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./scriptsplugin/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./scriptsplugin/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./scripts/form.js"></script>>
+  </body>
+</html>
